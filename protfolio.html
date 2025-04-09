@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luwangamba Wahengbam | Portfolio</title>
+  <link rel="stylesheet" href="portfolio.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fleur+De+Leah&display=swap');
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      color: #333;
+      background-image: url(luwangp.png);
+      background-size: cover;
+      background-attachment: fixed;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    header {
+      background: linear-gradient(to right, #1a1a1a, #333);
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      position: relative;
+    }
+
+    header h1 {
+      font-family: "Fleur De Leah", cursive;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 2.5rem;
+      animation: slideIn 1s ease-out;
+    }
+
+    @keyframes slideIn {
+      0% {
+        opacity: 0;
+        transform: translateX(-100px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.5s ease, text-decoration 0.5s ease;
+    }
+
+    nav a:hover {
+      color: #00ff88;
+      text-decoration: underline;
+    }
+
+    .logo {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+    }
+
+    header .logo img {
+      height: 80px;
+      width: auto;
+      border-radius: 12px;
+    }
+
+    section {
+      padding: 2rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    h2 {
+      text-align: center;
+      color: #00ffff;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      padding-right: 50px;
+      color: #c83cff;
+    }
+
+    span {
+      color: #222;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 1rem;
+    }
+
+    article {
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 15px;
+      padding: 1rem;
+      width: 280px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    article:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px #00ffee;
+    }
+
+    section img {
+      max-width: 100%;
+      height: 256px;
+      border-radius: 10px;
+      width: 100%;
+      box-shadow: 0 0 15px rgb(131, 136, 136);
+      transition: all 0.5s ease-in-out;
+    }
+
+    section img:hover {
+      transform: scale(1.03);
+      cursor: pointer;
+      box-shadow: 0 0 25px rgb(152, 255, 255);
+    }
+
+    form {
+      max-width: 600px;
+      margin: auto;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.7rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    button {
+      padding: 0.7rem 1.5rem;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #222;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
+    </div>
+
+    <h1>Luwangamba Wahengbam</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p><span>I'm Luwangamba Wahengbam, a creative student passionate about web development. I love building interactive,
+        minimalist webpages and experimenting with animations using HTML, CSS, and JavaScript.</span></p>
+  </section>
+
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="container">
+      <article>
+        <h3>Project 1: KangleiMaru Website</h3>
+        <img src="project1.jpg" alt="Project 1" />
+        <p>A cultural and informational site for showcasing Manipur. Built with a modern minimalist style.</p>
+      </article>
+      <article>
+        <h3>Project 2: Animated Portfolio</h3>
+        <img src="project2.jpg" alt="Project 2" />
+        <p>A responsive portfolio website featuring smooth animations and transitions using CSS and JS.</p>
+      </article>
+      <article>
+        <h3>Project 3: Quiz App</h3>
+        <img src="project3.webp" alt="Project 3" />
+        <p>An interactive quiz built with JavaScript that calculates scores and gives feedback.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form id="contactForm" onsubmit="return validateForm()">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Luwangamba Wahengbam | Email: luwangambawahengbam2006@gmail.com</p>
+  </footer>
+
+  <script>
+    function validateForm() {
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (name === "" || email === "" || message === "") {
+        alert("Please fill in all fields.");
+        return false;
+      }
+
+      alert("Thank you! Your message has been sent.");
+      return true;
+    }
+  </script>
+</body>
+
+</html>

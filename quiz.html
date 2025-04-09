@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+    <style>
+        body {
+            background: #fffaf5;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            animation: slideIn 1.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .animated-heading {
+            font-size: 2.5rem;
+            text-align: center;
+            background: linear-gradient(to right, #ff4e00, #ec9f05);
+
+            -webkit-text-fill-color: transparent;
+            animation: flameMove 2.5s linear infinite alternate;
+        }
+
+        @keyframes flameMove {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-10px);
+            }
+        }
+
+        .question-box {
+            background: #fff0e6;
+            border-left: 5px solid #ff5722;
+            margin: 1rem 0;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(255, 87, 34, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .question-box:hover {
+            transform: scale(1.02);
+        }
+
+        label {
+            display: block;
+            margin: 5px 0;
+            font-size: 1.1rem;
+        }
+
+        .submit-btn {
+            background: #ff5722;
+            color: white;
+            padding: 0.75rem 2rem;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .submit-btn:hover {
+            background: #e64a19;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="animated-heading"> Knowledge Quiz</h1>
+        <form id="quizForm">
+            <div class="question-box">
+                <p>1. What is the capital of France?</p>
+                <label><input type="radio" name="q1" value="0"> Berlin</label><br>
+                <label><input type="radio" name="q1" value="1"> Paris</label><br>
+                <label><input type="radio" name="q1" value="0"> Madrid</label>
+            </div>
+
+            <div class="question-box">
+                <p>2. What is 2 + 2?</p>
+                <label><input type="radio" name="q2" value="0"> 3</label><br>
+                <label><input type="radio" name="q2" value="1"> 4</label><br>
+                <label><input type="radio" name="q2" value="0"> 5</label>
+            </div>
+
+            <div class="question-box">
+                <p>3. Which planet is known as the Red Planet?</p>
+                <label><input type="radio" name="q3" value="1"> Mars</label><br>
+                <label><input type="radio" name="q3" value="0"> Venus</label><br>
+                <label><input type="radio" name="q3" value="0"> Jupiter</label>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Quiz</button>
+        </form>
+    </div>
+
+    <script >
+        document.getElementById('quizForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            let score = 0;
+
+            const form = event.target;
+            const totalQuestions = 3;
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const radios = form['q' + i];
+                if (!radios) continue;
+
+                for (let radio of radios) {
+                    if (radio.checked && radio.value === '1') {
+                        score++;
+                    }
+                }
+            }
+
+            alert(`🎉 You scored ${score} out of ${totalQuestions}!`);
+
+            
+            setTimeout(() => {
+                window.location.href = 'quiz-thanksyou.html';
+            }, 1500);
+        });
+
+    </script>
+</body>
+
+</html>

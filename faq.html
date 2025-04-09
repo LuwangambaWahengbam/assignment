@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FAQ Page</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: #4e54c8;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    section {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    dl {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    dt {
+      background-color: #f1f1f1;
+      padding: 1rem;
+      cursor: pointer;
+      margin: 0;
+      transition: background-color 0.3s;
+    }
+
+    dt:hover {
+      background-color: #e0e0e0;
+    }
+
+    dd {
+      background-color: #fff;
+      margin: 0;
+      padding: 1rem;
+      border-top: 1px solid #ddd;
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: max-height 0.5s ease, opacity 0.4s ease;
+    }
+
+    dd.show {
+      max-height: 200px;
+      opacity: 1;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #333;
+      color: white;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 600px) {
+      dt, dd {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Frequently Asked Questions</h1>
+  </header>
+
+  <section>
+    <dl>
+      <dt onclick="toggleAnswer(this)">What is your return policy?</dt>
+      <dd>We accept returns within 30 days of purchase. Please keep the receipt.</dd>
+
+      <dt onclick="toggleAnswer(this)">How can I track my order?</dt>
+      <dd>You will receive a tracking link via email after your order is shipped.</dd>
+
+      <dt onclick="toggleAnswer(this)">Do you ship internationally?</dt>
+      <dd>Yes, we ship to over 100 countries worldwide with additional charges.</dd>
+
+      <dt onclick="toggleAnswer(this)">How do I contact support?</dt>
+      <dd>You can reach us via the Contact page or email us at luwangambawahengbam2006@gmail.com.</dd>
+    </dl>
+  </section>
+
+  <footer>
+    &copy; 2025 Your LuwangKeithel. All rights reserved.
+  </footer>
+
+  <script>
+    function toggleAnswer(el) {
+      const answer = el.nextElementSibling;
+      answer.classList.toggle('show');
+    }
+  </script>
+
+</body>
+</html>

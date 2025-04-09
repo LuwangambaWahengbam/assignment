@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luwang's Music Album</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #1e1e2f, #2c2c54);
+      color: white;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #00ffcc;
+      text-shadow: 0 0 10px #00ffcc;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      color: #ffccff;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-left: 4px solid #00ffcc;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 255, 204, 0.2);
+    }
+
+    .track-name {
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .track-duration {
+      color: #aaa;
+      font-size: 0.9rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .audio-player {
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+
+    .buy-button {
+      display: inline-block;
+      margin: 30px auto 0;
+      padding: 12px 24px;
+      background-color: #00ffcc;
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 5px;
+      text-align: center;
+      transition: background 0.3s;
+    }
+
+    .buy-button:hover {
+      background-color: #00ccaa;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Luwang's Debut Album</h1>
+    <p>By: Luwang</p>
+  </header>
+
+  <ul id="track-list">
+    <li>
+      <div class="track-name">1. English</div>
+      <div class="track-duration">Duration: 30s</div>
+      <audio class="audio-player" controls>
+        <source src="music1.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+    </li>
+    <li>
+      <div class="track-name">2. Loktak ho lairembi</div>
+      <div class="track-duration">Duration: 6:40</div>
+      <audio class="audio-player" controls>
+        <source src="music2.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+    </li>
+    <li>
+      <div class="track-name">3. Hanlak Lo gaba</div>
+      <div class="track-duration">Duration: 4:50</div>
+      <audio class="audio-player" controls>
+        <source src="music3.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+    </li>
+  </ul>
+
+  <div style="text-align:center;">
+    <a href="https://music.google.com/" target="_blank" class="buy-button">Buy Album</a>
+  </div>
+
+  <script>
+    const players = document.querySelectorAll('.audio-player');
+
+    players.forEach((player, index) => {
+      
+      player.addEventListener('play', () => {
+        players.forEach((other, i) => {
+          if (i !== index) other.pause();
+        });
+      });
+
+     
+      player.addEventListener('ended', () => {
+        if (players[index + 1]) {
+          players[index + 1].play();
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

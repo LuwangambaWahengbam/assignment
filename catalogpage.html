@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LuwangKeithel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Jost', sans-serif;
+    }
+
+    body {
+      background-color: #1c1b2f;
+      color: #fff;
+    }
+
+    header {
+      background: #272640;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(0, 255, 255, 0.2);
+    }
+
+    header h1 {
+      color: #ff6ec4;
+      font-size: 2rem;
+      position: relative;
+      animation: text-slide 2s ease-in-out forwards;
+    }
+
+    @keyframes text-slide {
+      0% { transform: translateX(-100%); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      position: relative;
+    }
+
+    nav a::before {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background: #00ffcc;
+      bottom: -4px;
+      left: 0;
+      transition: width 0.3s ease-in-out;
+    }
+
+    nav a:hover::before {
+      width: 100%;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .product {
+      background: #312f4b;
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(0, 255, 204, 0.6);
+    }
+
+    .product img {
+      width: 100%;
+      border-radius: 8px;
+      max-height: 200px;
+      object-fit: cover;
+      
+    }
+
+    .product h3 {
+      color: #00f0ff;
+      margin: 1rem 0 0.5rem;
+    }
+
+    .product p {
+      color: #ccc;
+      font-size: 0.95rem;
+    }
+
+    .price {
+      margin-top: 0.8rem;
+      font-weight: bold;
+      color: #ffdf2b;
+    }
+
+    .product::after {
+      content: "\2728";
+      font-size: 4rem;
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      opacity: 0.05;
+      transform: rotate(30deg);
+    }
+
+    footer {
+      background: #272640;
+      color: #aaa;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #00ffc8;
+      margin: 0 0.5rem;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>LuwangKeithel</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#product">Products</a>
+      <a href="#">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="product-grid">
+      <div class="product" id="product">
+        <img src="product1.webp" alt="Product 1">
+        <h3>Sunscreen</h3>
+        <p>Trendy glowing tee for night lovers. Soft, cool & comfy!</p>
+        <div class="price">$19.99</div>
+      </div>
+      <div class="product">
+        <img src="product2.webp" alt="Product 2">
+        <h3>Protein</h3>
+        <p>Stay warm in style. Lava pattern glows in the dark!</p>
+        <div class="price">$34.99</div>
+      </div>
+      <div class="product">
+        <img src="product3.jpeg" alt="Product 3">
+        <h3>Home item</h3>
+        <p>Glow with the flow! Adjustable and super light.</p>
+        <div class="price">$14.99</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Contact us: luwangambawahengbam2006@gmail.com | Follow us on
+      <a href="#">Facebook</a>, <a href="#">Instagram</a>, <a href="#">Twitter</a>
+    </p>
+  </footer>
+</body>
+</html>

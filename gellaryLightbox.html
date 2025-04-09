@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luwang's Gallery</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost&display=swap">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Jost', sans-serif;
+            background: #22223b;
+            padding: 20px;
+            color: white;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            color: #c843d4;
+            text-shadow: 0 0 20px #ca42d6;
+            margin-bottom: 20px;
+        }
+
+        h1 span {
+            color: aqua;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .link a {
+            color: white;
+            text-decoration: none;
+            font-weight: 550;
+            font-size: 1.2rem;
+            position: relative;
+        }
+
+        .link a::before {
+            content: "";
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: #077b32;
+            transition: 0.3s;
+        }
+
+        .link a:hover::before {
+            width: 100%;
+        }
+
+        .link a:hover {
+            color: #077b32;
+        }
+
+        .container1 {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(3, 1fr);
+            /* 3 images per row */
+            grid-auto-rows: auto;
+            position: relative;
+            padding: 1rem;
+        }
+
+        .card {
+            position: relative;
+        }
+
+        .carding {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            max-height: 400px;
+            border-radius: 1.25rem;
+            border: 0.5rem solid #d71ff0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carding img {
+            width: 100%;
+            height: auto;
+            max-height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .carding img:hover {
+            filter: brightness(110%);
+            transform: scale(1.05);
+        }
+
+        .tag {
+            position: absolute;
+            bottom: 0;
+            right: 18px;
+            width: 200px;
+            background: #22223b;
+            color: #d71ff0;
+            font-weight: bold;
+            border-top: 5px solid #d71ff0;
+            border-left: 5px solid #d71ff0;
+            padding: 0.5rem;
+            border-radius: 1rem 0 0 0;
+            justify-content: center;
+        }
+
+        .tag p span {
+            color: white;
+            justify-content: center;
+            text-align: center;
+        }
+
+        
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 10px;
+            box-shadow: 0 0 30px #0ff;
+            animation: zoomIn 0.6s ease-in-out;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Photo <span>Gallery</span> App</h1>
+    <nav>
+        <div class="links">
+            <div class="link"><a href="#">Download</a></div>
+            <div class="link"><a href="#">About</a></div>
+            <div class="link"><a href="#">Favorite</a></div>
+            <div class="link"><a href="#">Explore</a></div>
+            <div class="link"><a href="#">Contact</a></div>
+        </div>
+    </nav>
+
+    <div class="container1">
+        
+        <div class="card">
+            <div class="carding">
+                <a href="butterf.jpg"><img src="butterf.jpg" alt="Image 1"></a>
+            </div>
+            <div class="tag">
+                <p><span>Butterfly</span></p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="carding">
+                <a href="flower.jpg"><img src="flower.jpg" alt="Image 1"></a>
+            </div>
+            <div class="tag">
+                <p><span>Flower</span></p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="carding">
+                <a href="river.jpg"><img src="river.jpg" alt="Image 1"></a>
+            </div>
+            <div class="tag">
+                <p><span>river</span></p>
+            </div>
+        </div>
+       
+    </div>
+
+    
+    <div id="lightbox-modal" class="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <script>
+        const modal = document.getElementById("lightbox-modal");
+        const modalImg = document.getElementById("lightbox-img");
+        const closeBtn = document.querySelector(".close");
+
+        document.querySelectorAll(".carding a").forEach(link => {
+            link.addEventListener("click", e => {
+                e.preventDefault();
+                const imgSrc = link.getAttribute("href");
+                modal.style.display = "flex";
+                modalImg.src = imgSrc;
+            });
+        });
+
+        closeBtn.onclick = function () {
+            modal.style.display = "none";
+        };
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
+    </script>
+</body>
+
+</html>

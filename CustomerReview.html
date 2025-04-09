@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Review Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #202020, #2b2b2b);
+      color: #f5f5f5;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: #333;
+      color: #fff;
+      border-radius: 10px;
+      margin-bottom: 40px;
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
+      transform: rotateX(20deg) scale(1.05);
+      transition: all 0.5s ease;
+    }
+
+    header:hover {
+      transform: rotateX(0deg) scale(1.1);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 20px 0;
+    }
+
+    nav a {
+      color: #00ffd5;
+      text-decoration: none;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      left: 0;
+      bottom: -5px;
+      background: #00ffd5;
+      transition: 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    section.reviews, section.form {
+      margin-bottom: 40px;
+      perspective: 1000px;
+    }
+
+    article {
+      background: #444;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px auto;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+      transform-style: preserve-3d;
+      transform: rotateY(15deg);
+      transition: transform 0.6s ease;
+    }
+
+    article:hover {
+      transform: rotateY(0deg);
+    }
+
+    h2 {
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+      color: #00ffd5;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    form {
+      width: 90%;
+      max-width: 600px;
+      background: #555;
+      padding: 20px;
+      border-radius: 10px;
+      margin: auto;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+      transform: rotateY(-10deg);
+      transition: transform 0.5s ease;
+    }
+
+    form:hover {
+      transform: rotateY(0deg);
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 5px;
+    }
+
+    input[type="text"], textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      margin-bottom: 10px;
+    }
+
+    .rating {
+      display: flex;
+      gap: 10px;
+      margin: 10px 0;
+    }
+
+    input[type="radio"] {
+      transform: scale(1.2);
+    }
+
+    button {
+      background: #00ffd5;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 0 15px rgba(0, 255, 213, 0.5);
+      transition: transform 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+    
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Luwang Reviews</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="reviews" id="reviews">
+    <article>
+      <h2>John Doe - 5 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00ffd5"><path d="m320-240 160-122 160 122-60-198 160-114H544l-64-208-64 208H220l160 114-60 198ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg></h2>
+      <p>Amazing experience with Luwang! Highly recommended.</p>
+    </article>
+    <article>
+      <h2>Jane Smith - 4 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00ffd5"><path d="m320-240 160-122 160 122-60-198 160-114H544l-64-208-64 208H220l160 114-60 198ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg></h2>
+      <p>Great service but room for improvement in delivery time.</p>
+    </article>
+  </section>
+
+  <section class="form" id="contact">
+    <form onsubmit="submitReview(event)">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required>
+
+      <label>Rating:</label>
+      <div class="rating">
+        <label><input type="radio" name="rating" value="1"> <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00ffd5"><path d="m320-240 160-122 160 122-60-198 160-114H544l-64-208-64 208H220l160 114-60 198ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>1</label>
+        <label><input type="radio" name="rating" value="2"> <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00ffd5"><path d="m320-240 160-122 160 122-60-198 160-114H544l-64-208-64 208H220l160 114-60 198ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>2</label>
+        <label><input type="radio" name="rating" value="3"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00ffd5"><path d="m320-240 160-122 160 122-60-198 160-114H544l-64-208-64 208H220l160 114-60 198ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg> 3</label>
+        <label><input type="radio" name="rating" value="4"> <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00ffd5"><path d="m320-240 160-122 160 122-60-198 160-114H544l-64-208-64 208H220l160 114-60 198ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>4</label>
+        <label><input type="radio" name="rating" value="5"> <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00ffd5"><path d="m320-240 160-122 160 122-60-198 160-114H544l-64-208-64 208H220l160 114-60 198ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>5</label>
+      </div>
+
+      <label for="comment">Comment:</label>
+      <textarea id="comment" rows="4" required></textarea>
+
+      <button type="submit">Submit Review</button>
+    </form>
+  </section>
+
+  <script>
+    function submitReview(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const rating = document.querySelector('input[name="rating"]:checked').value;
+      const comment = document.getElementById('comment').value;
+
+      const reviewSection = document.querySelector('.reviews');
+      const article = document.createElement('article');
+      article.innerHTML = `<h2>${name} - ${rating} <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00ffd5"><path d="m320-240 160-122 160 122-60-198 160-114H544l-64-208-64 208H220l160 114-60 198ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>${rating > 1 ? '' : ''}</h2><p>${comment}</p>`;
+
+      reviewSection.appendChild(article);
+
+      document.querySelector('form').reset();
+      alert('Review submitted!');
+    }
+  </script>
+</body>
+
+</html>

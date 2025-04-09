@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recipe Blog</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff8f2;
+      color: #333;
+    }
+
+    header {
+      background: #ff6347;
+      padding: 1rem;
+      color: white;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin: 0 1rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffcccb;
+    }
+
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 2rem;
+    }
+
+    .content {
+      flex: 3;
+    }
+
+    aside {
+      flex: 1;
+      padding: 1rem;
+      background: #fff2eb;
+      margin-left: 1rem;
+      border-radius: 10px;
+    }
+
+    article {
+      background: white;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    article:hover {
+      transform: scale(1.02);
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+      margin: 1rem 0;
+    }
+
+    h1.flame-text {
+      font-size: 2.5rem;
+      animation: flame 1.5s infinite alternate;
+      display: inline-block;
+    }
+
+    @keyframes flame {
+      0% {
+        text-shadow: 0 0 5px #ff9966, 0 0 10px #ff5e00, 0 0 15px #ff3300;
+      }
+
+      100% {
+        text-shadow: 0 0 10px #ff3300, 0 0 20px #ff5e00, 0 0 25px #ff9966;
+      }
+    }
+
+    ul,
+    ol {
+      margin-left: 1.5rem;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    footer a {
+      color: #ffcccb;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 class="flame-text"> Recipe Blog</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Recipes</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="content">
+      <article>
+        <h2>Spicy Chicken Curry</h2>
+        <img src="chikencurry.jpeg" alt="Chicken Curry">
+        <h3>Ingredients</h3>
+        <ul>
+          <li>500g chicken</li>
+          <li>2 onions</li>
+          <li>2 tomatoes</li>
+          <li>Spices</li>
+          <li>Oil & Salt</li>
+        </ul>
+        <h3>Preparation</h3>
+        <ol>
+          <li>Chop the onions and tomatoes.</li>
+          <li>Fry onions, add spices and chicken.</li>
+          <li>Add tomatoes, cook till tender.</li>
+          <li>Serve hot with rice.</li>
+        </ol>
+      </article>
+
+      <article>
+        <h2>Veg Pasta Delight</h2>
+        <img src="Vegetable-Pasta.jpg" alt="Veg Pasta">
+        <h3>Ingredients</h3>
+        <ul>
+          <li>200g pasta</li>
+          <li>Mixed veggies</li>
+          <li>Cheese</li>
+          <li>Tomato sauce</li>
+        </ul>
+        <h3>Preparation</h3>
+        <ol>
+          <li>Boil pasta.</li>
+          <li>Saute vegetables.</li>
+          <li>Mix pasta, veggies, and sauce.</li>
+          <li>Top with cheese and serve.</li>
+        </ol>
+      </article>
+    </section>
+
+    <aside>
+      <h3>🔥 Related Recipes</h3>
+      <ul>
+        <li><a href="#">Paneer Butter Masala</a></li>
+        <li><a href="#">Egg Fried Rice</a></li>
+        <li><a href="#">Momos with Chilli Sauce</a></li>
+      </ul>
+    </aside>
+  </main>
+
+  <footer>
+    <p>Follow us on:
+      <a href="#">Instagram</a> |
+      <a href="#">YouTube</a> |
+      <a href="#">Facebook</a>
+    </p>
+  </footer>
+
+  <script >
+    console.log(" Recipe Blog Loaded!");
+  </script>
+</body>
+
+</html>
